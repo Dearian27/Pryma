@@ -15,7 +15,6 @@
 }
 
 circle {
-  z-index: 1;
   pointer-events: all;
   stroke: rgb(126, 126, 126);
 }
