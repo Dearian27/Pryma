@@ -4,7 +4,7 @@ const task = document.querySelector('.text');
 const canvas = document.querySelector('.canvas');
 const circles = document.querySelector('.circles');
 const lines = document.querySelector('.lines');
-console.log(lines)
+
 let objects = [];
 let segments = [];
 
@@ -21,9 +21,17 @@ task.innerHTML = taskTexts[stage];
 
 addEventListener('click', (event) => {
   if (event.target === next) {
-    stage = "objects" ? "ribs" : "ribs" && "completion";
-    task.innerHTML = taskTexts[stage];
-    next.disables = true;
+    if (stage == "objects") {
+      stage = "ribs";
+      task.innerHTML = taskTexts[stage];
+      next.disables = true;
+    }
+    else if (stage == "ribs" && !ribDirecting) {
+      stage = "completion";
+      task.innerHTML = taskTexts[stage];
+      next.disables = true;
+    }
+
   }
 })
 

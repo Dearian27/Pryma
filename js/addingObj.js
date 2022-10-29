@@ -1,5 +1,7 @@
 canvas.addEventListener('click', event => {
-  if (objects.length > 1)
+  if (objects.length > 1 && stage == 'objects')
+    next.disabled = false;
+  else if (!ribDirecting && stage == 'ribs')
     next.disabled = false;
 })
 
@@ -16,9 +18,3 @@ canvas.addEventListener('click', (event) => {
   }
 })
 
-addEventListener('click', (event) => {
-  if (event.target === next) {
-    stage = "objects" ? "ribs" : "ribs" && "completion";
-    next.disables = true;
-  }
-})
