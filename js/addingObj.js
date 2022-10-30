@@ -1,9 +1,11 @@
 canvas.addEventListener('click', event => {
   if (objects.length > 1 && stage == 'objects')
     next.disabled = false;
-  else if (!ribDirecting && stage == 'ribs')
-    next.disabled = false;
+  // else if (!ribDirecting && canFinish && stage == 'ribs')
+  //   //* if connected all nodes 
+  //   next.disabled = false;
 })
+
 
 
 canvas.addEventListener('click', (event) => {

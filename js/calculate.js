@@ -16,6 +16,7 @@ let result = [
 ];
 let way = [0];
 
+//* will make for of way instead 0 to 8 */
 
 
 const calculate = () => {

@@ -1,7 +1,13 @@
+let device = "pc"; //* mobile | pc
+
+const modalLine = document.querySelector('.lineValueModal');
+const valueBtn = document.querySelector('.valueBtn');
+const inputLine = document.querySelector('#inputLine');
 const next = document.querySelector('.btn');
 const task = document.querySelector('.text');
 
-const canvas = document.querySelector('.canvas');
+const canvas = document.querySelector('.svgCanvas');
+const mainCanvas = document.querySelector('.canvas');
 const circles = document.querySelector('.circles');
 const lines = document.querySelector('.lines');
 
@@ -14,8 +20,8 @@ let ribDirecting = false; // is choosing rib end
 
 const taskTexts = {
   objects: `1. Locate objects on canvas`,
-  ribs: `2. Locate spots on canvas`,
-  completion: `3. Locate spots on canvas`,
+  ribs: `2. Connect their by lines`,
+  completion: `3. `,
 }
 task.innerHTML = taskTexts[stage];
 
@@ -24,15 +30,14 @@ addEventListener('click', (event) => {
     if (stage == "objects") {
       stage = "ribs";
       task.innerHTML = taskTexts[stage];
-      next.disables = true;
+      next.disabled = true;
     }
     else if (stage == "ribs" && !ribDirecting) {
       stage = "completion";
       task.innerHTML = taskTexts[stage];
-      next.disables = true;
+      next.disabled = true;
     }
 
   }
 })
-
 
