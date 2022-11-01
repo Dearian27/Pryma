@@ -73,7 +73,7 @@ body {
   font-family: 'Montserrat';
   font-weight: 600;
   color: #919191;
-  /* #6467ff */
+  transition: 1s;
   opacity: 1;
 }
 
@@ -92,11 +92,12 @@ body {
 
 circle {
   pointer-events: all;
-  stroke: rgb(126, 126, 126);
+  /* stroke: #7e7e7e; */
+  /* color: #5aff5a; */
 }
 
 line {
-  stroke-width: 3px;
+  stroke-width: 4px;
   stroke: #b8b0b0;
   stroke-opacity: 0.5;
 }
@@ -126,7 +127,10 @@ line {
 }
 
 .object {
-  stroke: #b8b0b0;
+  /* fill: #5aff5a; */
+  stroke-width: 5px;
+  stroke: #000000;
+  transition: 1s;
   animation: 2.4s distance ease-out;
 }
 

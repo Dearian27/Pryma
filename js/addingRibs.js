@@ -117,13 +117,9 @@ addEventListener('mousedown', (event) => { //* moving end of segment
 const checkFinish = () => {
   let checks = new Set([0]);
   for (let i = 0; i < objects.length; i++) {
-    console.log('before changing ', checks,
-      "array: ", [...checks])
     for (const rowIndex of [...checks]) {
       for (let [index, value] of scheme[rowIndex].entries()) {
         if (value !== 0) {
-          console.log('add ', index)
-          // scheme[rowIndex].entries();
           checks.add(index);
         }
       }

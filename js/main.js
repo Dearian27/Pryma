@@ -39,10 +39,17 @@ addEventListener('click', (event) => {
     else if (stage == "ribs" && !ribDirecting) {
       stage = "completion";
       task.innerHTML = taskTexts[stage];
-      next.disabled = true;
-      next.innerHTML = 'again'
+      next.innerHTML = 'again';
+      objects[0].setAttributeNS(null, 'r', 8);
+      objects[0].style.fill = "#5aff5a";
+      calculate();
+      setTimeout(() => { // waiting for anim end
+        calcAnim(0);  // first element [0]
+      }, 1000)
     }
-
+    else if (stage == "completion") {
+      window.location.reload();
+    }
   }
 })
 
