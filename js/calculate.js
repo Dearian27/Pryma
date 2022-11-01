@@ -1,15 +1,17 @@
 let way = [0];
+// let activeWay = [0];
 //* will make for of way to 8 instead 0 */
 
 
 const calculate = () => {
+
   while (way.length < scheme.length) {
     let min = null,
       xmin, ymin;
     for (let y = 0; y < scheme.length; y++) { // ітерація рядків
       if (way.indexOf(y) !== -1) { // якщо рядок присутній в масиві way
         scheme[y].forEach((el, x) => {
-          if ((el < min || min === null) && el !== 0) {
+          if ((el < min || min === null) && el !== 0 && way.indexOf(x) === -1) {
             min = el;
             xmin = x;
             ymin = y;
@@ -20,8 +22,11 @@ const calculate = () => {
     result[ymin][xmin] = min; // запис мінімального в таблицю результатів
     scheme[ymin][xmin] = 0; // занулення елемента
     scheme[xmin][ymin] = 0; // занулення симетричного елемента
+    // activeWay.filter(el => el === ymin)
+    // activeWay.push(xmin)
     way.push(xmin); // добавлення рядка в масив 
   }
+  console.log(result)
 }
 
 let animWay = [0]
