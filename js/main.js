@@ -21,7 +21,7 @@ let ribDirecting = false; // is choosing rib end
 const taskTexts = {
   objects: `1. Locate objects on canvas`,
   ribs: `2. Connect their by lines`,
-  completion: `3. `,
+  completion: ``,
 }
 task.innerHTML = taskTexts[stage];
 
@@ -40,6 +40,7 @@ addEventListener('click', (event) => {
       stage = "completion";
       task.innerHTML = taskTexts[stage];
       next.disabled = true;
+      next.innerHTML = 'again'
     }
 
   }

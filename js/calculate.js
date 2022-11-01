@@ -1,6 +1,6 @@
 let way = [0];
 
-//* will make for of way instead 0 to 8 */
+//* will make for of way to 8 instead 0 */
 
 
 const calculate = () => {

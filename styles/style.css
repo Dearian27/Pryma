@@ -63,7 +63,7 @@ body {
 
 .valueBtn:disabled {
   background-color: rgb(146, 134, 134);
-  color: rgb(211, 204, 204);
+  color: #d3cccc;
 }
 
 .valueNumber {
@@ -72,7 +72,8 @@ body {
   font-size: 15px;
   font-family: 'Montserrat';
   font-weight: 600;
-  color: #6467ff;
+  color: #919191;
+  /* #6467ff */
   opacity: 1;
 }
 

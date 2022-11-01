@@ -134,5 +134,7 @@ const checkFinish = () => {
       return;
     }
   }
+  task.style.color = '#ff5050';
+  task.innerHTML = "2. Connect all objects";
 }
 
