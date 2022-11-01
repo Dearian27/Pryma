@@ -214,7 +214,7 @@ line {
   }
 }
 
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
   .wrapper {
     width: 90%;
   }
@@ -230,7 +230,7 @@ line {
 }
 
 
-@media (max-width: 550px) {
+@media screen and (max-width: 550px) {
   .wrapper {
     width: 90%;
   }
@@ -245,7 +245,7 @@ line {
   }
 }
 
-@media (max-width: 420px) {
+@media screen and (max-width: 420px) {
   .wrapper {
     width: 90%;
   }
