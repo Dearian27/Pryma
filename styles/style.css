@@ -121,7 +121,6 @@ line {
 
 .text {
   font-family: 'Montserrat';
-  font-size: 16px;
   font-size: 30px;
   user-select: none;
 }
@@ -182,5 +181,51 @@ line {
 
   100% {
     box-shadow: 0 0 0px 0px #5aff5a7a;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .text {
+    font-size: 28px;
+  }
+
+  .btn {
+    font-size: 22px;
+    padding: 10px 20px;
+  }
+}
+
+
+@media (max-width: 550px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+  .btn {
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 6px 12px;
   }
 }

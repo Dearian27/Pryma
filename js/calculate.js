@@ -38,7 +38,6 @@ const calcAnim = (counter) => {
           if (objects.indexOf(segment.end) == x && objects.indexOf(segment.start) == currentWay[y] ||
             objects.indexOf(segment.start) == x && objects.indexOf(segment.end) == currentWay[y]) {
             currSegment = segment;
-            console.log(currSegment)
             animWay.push(x);
           }
         })
