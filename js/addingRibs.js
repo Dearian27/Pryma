@@ -44,15 +44,9 @@ const addLine = (e) => {
         });
         if (can) {
           modalLine.classList.add('active'); // modal
+          inputLine.focus();
           ribDirecting = false;
           segments[segments.indexOf(currEl)].end = obj;
-          if (!canFinish) {
-            checkFinish();
-            if (canFinish) { //** CHECKER **//
-              //* if connected all nodes 
-              next.disabled = false;
-            }
-          }
         }
       }
     }
@@ -120,18 +114,25 @@ addEventListener('mousedown', (event) => { //* moving end of segment
   }
 });
 
-
 const checkFinish = () => {
-  let count = 0;
-
-  for (const obj of objects) {
-    let isChecked = false;
-    segments.forEach(segment => {
-      if (isChecked == false && (segment.end == obj || segment.start == obj)) {
-        count++;
-        isChecked = true;
+  let checks = new Set([0]);
+  for (let i = 0; i < objects.length; i++) {
+    console.log('before changing ', checks,
+      "array: ", [...checks])
+    for (const rowIndex of [...checks]) {
+      for (let [index, value] of scheme[rowIndex].entries()) {
+        if (value !== 0) {
+          console.log('add ', index)
+          // scheme[rowIndex].entries();
+          checks.add(index);
+        }
       }
-    })
+    }
+    if (objects.length == [...checks].length) {
+      canFinish = true;
+      next.disabled = false;
+      return;
+    }
   }
-  if (count == objects.length) canFinish = true;
 }
+

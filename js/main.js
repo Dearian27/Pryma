@@ -25,12 +25,16 @@ const taskTexts = {
 }
 task.innerHTML = taskTexts[stage];
 
+let scheme = [],
+  result = [];
+
 addEventListener('click', (event) => {
   if (event.target === next) {
     if (stage == "objects") {
       stage = "ribs";
       task.innerHTML = taskTexts[stage];
       next.disabled = true;
+      createScheme(); // zero all values
     }
     else if (stage == "ribs" && !ribDirecting) {
       stage = "completion";
@@ -41,3 +45,25 @@ addEventListener('click', (event) => {
   }
 })
 
+const createScheme = () => {
+  //SCHEME
+  for (let y = 0; y < objects.length; y++) {
+    scheme.push([])
+    for (let x = 0; x < objects.length; x++) {
+      scheme[y][x] = 0;
+    }
+  }
+  //RESULT
+  for (let y = 0; y < objects.length; y++) {
+    result.push([])
+    for (let x = 0; x < objects.length; x++) {
+      result[y][x] = 0;
+    }
+  }
+}
+
+
+const updateScheme = () => {
+  scheme[objects.indexOf(currEl.start)][objects.indexOf(currEl.end)] = Number(currEl.value);
+  scheme[objects.indexOf(currEl.end)][objects.indexOf(currEl.start)] = Number(currEl.value);
+} 
