@@ -1,5 +1,7 @@
 let device = "pc"; //* mobile | pc
 
+let count = 0;
+const countHTML = document.querySelector('.count');
 const modalLine = document.querySelector('.lineValueModal');
 const valueBtn = document.querySelector('.valueBtn');
 const inputLine = document.querySelector('#inputLine');

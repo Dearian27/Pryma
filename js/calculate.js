@@ -39,6 +39,10 @@ const calcAnim = (counter) => {
             objects.indexOf(segment.start) == x && objects.indexOf(segment.end) == currentWay[y]) {
             currSegment = segment;
             animWay.push(x);
+
+            //add value to count
+            count += Number(segment.value);
+            countHTML.innerHTML = count;
           }
         })
         currSegment.valueHTML.style.color = "#000";
@@ -55,6 +59,7 @@ const calcAnim = (counter) => {
     }
     else {
       console.log(result)
+      countHTML.classList.add('active');
       return;
     }
   }, 1000)
