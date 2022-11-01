@@ -44,9 +44,8 @@ addEventListener('click', (event) => {
       next.innerHTML = 'again';
       objects[0].setAttributeNS(null, 'r', 8);
       objects[0].style.fill = "#5aff5a";
-      console.log("before ", scheme)
+
       calculate();
-      console.log("after ", scheme)
       setTimeout(() => { // waiting for anim end
         calcAnim(0);  // first element [0]
       }, 1000)

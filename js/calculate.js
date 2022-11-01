@@ -44,7 +44,6 @@ const calcAnim = (counter) => {
             objects.indexOf(segment.start) == x && objects.indexOf(segment.end) == currentWay[y]) {
             currSegment = segment;
             animWay.push(x);
-
             //add value to count
             count += Number(segment.value);
             countHTML.innerHTML = count;
@@ -59,7 +58,7 @@ const calcAnim = (counter) => {
   }
 
   setTimeout(() => {
-    if (counter != way.length) {
+    if (counter != way.length - 1) {
       calcAnim(counter + 1);
     }
     else {
